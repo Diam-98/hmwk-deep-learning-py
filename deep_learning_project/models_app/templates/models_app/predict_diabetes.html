@@ -1,0 +1,14 @@
+<!-- models_app/templates/models_app/predict_diabetes.html -->
+<h2>Diabetes Prediction</h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.as_p }} {% if form.non_field_errors %}
+  <div class="error">{{ form.non_field_errors }}</div>
+  {% endif %}
+  <button type="submit">Prédir</button>
+</form>
+
+<!-- Boutons de navigation -->
+<div>
+  <h1>Menu</h1>
+  <a href="{% url 'predict_cancer' %}" class="btn">Prédiction du Cancer</a>
+</div>
